@@ -1,32 +1,39 @@
-# Tuần 05 — Lists · Tuples · Mutability · Unpacking
+# Python Practice Exercises
 
-Tuần này bạn chọn list cho collection có thể thay đổi và tuple cho một nhóm giá
-trị cố định, đồng thời quan sát khác biệt giữa alias và copy.
+A set of short, focused exercises for practicing core Python fundamentals, organized by week.
 
-## Outcomes
+## Week 5 — Lists, Slicing & Tuples
 
-- tạo, đọc, cập nhật, thêm và xóa phần tử list;
-- dùng indexing và slicing;
-- tạo tuple, packing và unpacking;
-- giải thích list mutable và tuple immutable;
-- phân biệt hai tên cùng trỏ một list với shallow copy độc lập.
+| File | Topic |
+|---|---|
+| `ex01_lists.py` | List CRUD — append, insert, update, remove, pop, slicing |
+| `ex02_slicing.py` | Slicing, mutability, alias vs. shallow copy |
+| `ex03_tuples.py` | Tuple packing/unpacking, multiple assignment, swap idiom |
 
-Comprehensions được học có hệ thống ở Week 06.
 
-## Learning path
+## How to run
 
-```text
-README → notes → examples → exercises → hints
-       → machine check → collection workflow → evidence
+Each file is standalone. Run any of them directly with Python 3.10+:
+
+```bash
+python ex01_lists.py
 ```
 
-Đi theo [`notes.md`](notes.md), [`examples/`](examples/),
-[`exercises/`](exercises/), [`hints.md`](hints.md),
-[machine check](checks/README.md) và [mini-project](mini-project/README.md).
+## Notes
 
-## Evidence
+### Week 5
 
-- output `Week 05 solution checks: PASS`;
-- một ví dụ alias thay đổi cùng list;
-- một ví dụ copy không thay đổi source;
-- tuple unpacking và một collection workflow đã chạy.
+**Lists (`ex01_lists.py`)**
+- `insert(i, x)` places an item at a specific index.
+- `remove(x)` deletes by value (first match found).
+- `pop()` / `pop(i)` deletes by index and returns the removed item.
+
+**Slicing & mutability (`ex02_slicing.py`)**
+- `alias = numbers` does **not** copy — both names reference the same list, so mutating one affects the other.
+- `numbers[:]` (or `.copy()`) creates an independent shallow copy.
+- Slices like `numbers[:3]` always produce a brand-new list.
+
+**Tuples (`ex03_tuples.py`)**
+- `x, y = coordinate` unpacks a tuple in one line.
+- The swap idiom `left, right = right, left` works because the right-hand side is fully evaluated into a temporary tuple before assignment happens.
+
