@@ -5,11 +5,7 @@ from exercises.decision import LOCAL_ACTIONS, choose_action, validate_turn
 
 
 def test_normal_case() -> None:
-    # Arrange
-    position, goal = 1, 4
-    # Act
-    action = choose_action(position, goal)
-    # Assert
+    action = choose_action(1, 4)
     assert action == "right"
     assert action in LOCAL_ACTIONS
 
@@ -24,5 +20,4 @@ def test_invalid_turn() -> None:
 
 
 def test_regression_position_past_goal_moves_left() -> None:
-    # Regression: an earlier version always returned "right".
     assert choose_action(4, 1) == "left"
